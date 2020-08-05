@@ -1,7 +1,7 @@
-$sourceBranch = 'remote/origin/_all_tests'
+$sourceBranch = 'remotes/origin/_all_tests'
 $verificationTestClass = '_Tests.cs'
 
-$folders = ((git ls-tree -d --name-only master) | Out-String)  -Split "`r`n" 
+$folders = ((git ls-tree -d --name-only $sourceBranch) | Out-String)  -Split "`r`n" 
 
 $allPass = $true
 foreach($f in $folders)
