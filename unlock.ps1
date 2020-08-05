@@ -29,6 +29,7 @@ foreach($f in $folders)
 
             $t = (git checkout $sourceBranch -- "$f" | Out-String) 
             $t = (git rm -f "$f/$verificationTestClass" | Out-String) 
+            $t = (git rm -f "$f/Example.cs" | Out-String) 
             $t = (git rm -r $f --cache| Out-String) 
             
             #Remove-Item "$f/$verificationTestClass" -Force -ErrorAction Ignore
