@@ -28,7 +28,10 @@ foreach($f in $folders)
             # we should just load in a new test
 
             $t = (git checkout $sourceBranch -- "$f" | Out-String) 
-            Remove-Item "$f/$verificationTestClass" -Force -ErrorAction Ignore
+            $t = (git rm -f "$f/$verificationTestClass" | Out-String) 
+            $t = (git rm -r $f --cache| Out-String) 
+            
+            #Remove-Item "$f/$verificationTestClass" -Force -ErrorAction Ignore
             dotnet sln add "$f"
             break;
         }
