@@ -61,3 +61,5 @@ public class _Tests
         Assert.Equal(new[] { "1", "2", "3" }, new[] { 1, 2, 3 }.Accumulate(x => x.ToString()));
     }
 }
+
+
