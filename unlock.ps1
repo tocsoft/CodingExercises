@@ -1,4 +1,4 @@
-$sourceBranch = 'remotes/origin/_all_tests'
+$sourceBranch = 'remotes/origin/_all_tests_session2'
 $verificationTestClass = '_Tests.cs'
 
 $folders = ((git ls-tree -d --name-only $sourceBranch) | Out-String)  -Split "`r`n" 
